@@ -1,0 +1,11 @@
+version: '2.0'
+
+services:
+ app:
+  image: openjdk:8-jre
+  volumes:
+   - ./target/timu-0.0.1-SNAPSHOT.jar:/usr/api.jar
+   - ./flag:/tmp/flag
+  ports:
+   - "8090:8090"
+  command: ["java", "-jar", "/usr/api.jar"]

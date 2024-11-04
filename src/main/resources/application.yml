@@ -1,0 +1,35 @@
+management:
+  endpoints:
+    web:
+      base-path: /core-api-v1/system-api/actuator
+      exposure:
+        include: "*"
+
+
+server:
+  port: 8090
+
+spring:
+  redis:
+    host: localhost        # Redis 服务器地址
+    port: 6379             # Redis 端口
+    password: 123456 # Redis 密码
+  datasource:
+    url: jdbc:mysql://localhost:3306/your_database_name?useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: your_password
+  jpa:
+    hibernate:
+      ddl-auto: update   # 可以设置为 create, create-drop, update, validate
+    show-sql: true       # 显示 SQL 查询
+
+springdoc:
+  api-docs:
+      path: /core-api-v1/api-docs
+  swagger-ui:
+      path: /core-api-v1/swagger-ui.html
+
+flag:
+  accessKey:
+    name: JJfly
+    secretkey: thereisakey!haha
